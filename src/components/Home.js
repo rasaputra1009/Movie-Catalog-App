@@ -1,10 +1,11 @@
 import React,{useEffect} from 'react'
 import Movies from './Movies'
 import { useDispatch,useSelector } from 'react-redux'
-import { addMovies, getallMovies } from '../features/movies/movieSlice'
+import { addMovies, getMovies } from '../features/movies/movieSlice'
 import axios from 'axios'
 
 function Home() {
+    const movies=useSelector(getMovies);
     const dispatch=useDispatch();
     useEffect(() => {
         const fetchMovies = async () => {

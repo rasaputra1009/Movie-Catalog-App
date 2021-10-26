@@ -1,0 +1,6 @@
+@import "./variables";
+.movies
+{
+    @include flex(row,space-evenly);
+    flex-wrap: wrap;
+}

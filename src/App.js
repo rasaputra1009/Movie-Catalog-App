@@ -1,7 +1,9 @@
 import React from 'react'
 import Home from './components/Home';
 import Add from './components/Add';
+import MovieDetail from './components/MovieDetail';
 import Header from './components/Header';
+import Edit from "./components/Edit"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -12,8 +14,10 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/Home" exact component={Home} />
           <Route path="/add" component={Add} />
-          {/* <Route path="/edit" component={Edit} /> */}
+          <Route path="/edit" component={Edit} />
+          <Route path="/movie-detail" component={MovieDetail} />
         </Switch>
       </Router>
     </div>

@@ -1,15 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { getallMovies } from '../features/movies/movieSlice'
+import { getMovies } from '../features/movies/movieSlice'
 import Movie from './Movie';
+import "../styles/Movies.css"
 function Movies() {
-    let movies=useSelector(getallMovies);
+    let movies = useSelector(getMovies);
     return (
-        <div>
-           {/* {movies.map((movie,index)=>(
-               <Movie key={index} data={movie}/>
-           ))} */}
-           {console.log(movies)}
+        <div className="movies">
+            {(movies.map((movie, index) => <Movie index={index} movie={movie} />))};
+            {/* {console.log(movies)} */}
         </div>
     )
 }

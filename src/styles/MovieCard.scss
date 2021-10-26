@@ -1,0 +1,22 @@
+@import "./variables";
+.movie-card {
+    @include flex(column, space-between);
+    align-items: flex-start;
+    .poster {
+        width: 350px;
+    }
+}
+.movie-info {
+    @include flex(column, flex-start);
+    align-items: flex-start;
+    .title{
+        font-size: $fontLargeSize;
+        // color:$textColor;
+        color: #000;
+    }
+    .edit
+    {
+        font-size: $fontLargeSize;
+        color: #000;
+    }
+}

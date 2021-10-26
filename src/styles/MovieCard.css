@@ -1,0 +1,26 @@
+.movie-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+.movie-card .poster {
+  width: 350px;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+.movie-info .title {
+  font-size: 35px;
+  color: #000;
+}
+.movie-info .edit {
+  font-size: 35px;
+  color: #000;
+}/*# sourceMappingURL=MovieCard.css.map */
