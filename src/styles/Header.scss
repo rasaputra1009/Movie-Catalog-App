@@ -1,0 +1,27 @@
+@import "./variables";
+@mixin header-item() {
+    padding: $padding;
+    font-size: $fontSmallSize;
+    border-radius: $borderRadius;
+}
+
+.header {
+    @include flex(row, space-between);
+    flex-wrap: wrap;
+    padding: $padding;
+    background-color: $bgColor;
+}
+.header-left {
+    font-weight: $fontWeight;
+    font-size: $fontLargeSize;
+}
+.header-right
+{
+    @include flex(row,space-evenly);
+    input
+    {
+        @include header-item();
+        outline: $outline;
+        padding: $paddingInput;
+    }
+}

@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.header-left {
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+.header-right input {
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+}/*# sourceMappingURL=Header.css.map */

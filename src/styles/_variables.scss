@@ -1,0 +1,18 @@
+@mixin flex($direction,$contentDir) {
+  display: flex;
+  justify-content: $contentDir;
+  flex-direction:$direction;
+  align-items:center;
+}
+
+
+$bgColor:lightblue;
+$textColor:white;
+$fontSmallSize:16px;
+$fontLargeSize:35px;
+$fontWeight:bolder;
+$padding:20px;
+$paddingInput:10px;
+$margin:20px;
+$borderRadius:5px;
+$outline:none;
