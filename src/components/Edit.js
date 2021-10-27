@@ -25,7 +25,7 @@ function Edit() {
   movieEdit = movies.filter((movie) => (movie.title === title));
   return (
     <div>
-      {(movies.length > 0) ? (<Form name={movieEdit[0]} edit={true} />) : ("null")}
+      {(movies.length > 0) ? (<Form name={movieEdit[0]} edit />) : ("null")}
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState={
-    movies:[]
+    movies:[],
+    searchMovies:[]
 };
 const movieSlice=createSlice({
     name:"movies",
@@ -8,9 +9,14 @@ const movieSlice=createSlice({
     reducers:{
         addMovies:(state,{payload})=>{
             state.movies=payload;
+        },
+        searchMovies:(state,{payload})=>{
+            state.searchMovies=payload;
         }
     }
 })
-export const { addMovies } =movieSlice.actions
+
+export const { addMovies,searchMovies } =movieSlice.actions
 export const getMovies=(state)=>state.movies.movies;
+export const searchRes=(state)=>state.movies.searchMovies;
 export default movieSlice.reducer

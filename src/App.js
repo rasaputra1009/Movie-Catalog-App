@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Edit from "./components/Edit";
 import "./styles/App.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Movies from './components/Movies';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/Home" exact component={Home} />
+          <Route path="?search" component={Movies} />
           <Route path="/add" component={Add} />
           <Route path="/edit/:title" component={Edit} />
           <Route path="/movie-detail" component={MovieDetail} />
