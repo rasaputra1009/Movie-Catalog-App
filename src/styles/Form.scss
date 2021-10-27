@@ -9,7 +9,7 @@
     @include flex(column, center);
     flex-wrap: wrap;
     color:whitesmoke;
-    background-color:black;
+    background-color:$bgColor;
     outline: none;
     align-items: flex-start;
     hr

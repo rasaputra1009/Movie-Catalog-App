@@ -4,6 +4,7 @@ const initialState = {
     description: "",
     imagepathurl: "",
     cast: "",
+    search:"",
     favourite: 0,
 };
 const movieInfo = createSlice({
@@ -25,9 +26,12 @@ const movieInfo = createSlice({
         updateFavourite: (state, { payload }) => {
             state.favourite = payload
         },
+        updateSearch:(state,{payload})=>{
+            state.search=payload
+        }
     }
 })
 
-export const { updateCast, updateDescription, updateTitle, updateFavourite, updateImagePathUrl } = movieInfo.actions
+export const { updateCast, updateDescription, updateTitle, updateFavourite, updateImagePathUrl ,updateSearch} = movieInfo.actions
 export const obj=(state)=>state.movieInfo;
 export default movieInfo.reducer

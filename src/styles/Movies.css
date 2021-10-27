@@ -1,6 +1,6 @@
 .movies {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;

@@ -3,13 +3,14 @@ import Home from './components/Home';
 import Add from './components/Add';
 import MovieDetail from './components/MovieDetail';
 import Header from './components/Header';
-import Edit from "./components/Edit"
+import Edit from "./components/Edit";
+import "./styles/App.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Router>
         <Header />
         <Switch>

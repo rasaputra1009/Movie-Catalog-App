@@ -5,26 +5,32 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
-  background-color: lightblue;
+  background-color: #202020;
 }
 
 .header-left {
   font-weight: bolder;
-  outline: none;
+  color: white;
   font-size: 35px;
 }
 
 .header-right {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  outline: none;
 }
 .header-right input {
+  border-radius: 8px;
   padding: 20px;
-  font-size: 16px;
-  border-radius: 5px;
   outline: none;
-  padding: 10px;
+}
+.header-right .header-right-add {
+  margin: 20px;
+  font-size: 24px;
+  color: red;
+}
+
+a, Link {
+  text-decoration: none;
 }/*# sourceMappingURL=Header.css.map */

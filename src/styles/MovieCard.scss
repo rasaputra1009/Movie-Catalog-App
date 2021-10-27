@@ -2,21 +2,27 @@
 .movie-card {
     @include flex(column, space-between);
     align-items: flex-start;
+    padding: $padding;
     .poster {
-        width: 350px;
+        width:$imgWidth;
+        height:$imgHeight;
+        border-radius:$borderRadius;
+        box-shadow: $boxShadow;
     }
 }
 .movie-info {
     @include flex(column, flex-start);
     align-items: flex-start;
-    .title{
+    .title {
         font-size: $fontLargeSize;
-        // color:$textColor;
-        color: #000;
+        color:$textColor;
     }
-    .edit
-    {
-        font-size: $fontLargeSize;
-        color: #000;
+    .edit {
+        font-size: $fontMediumSize;
+        color:$textEdit;
+        text-decoration:$outline;
+    }
+    a,Link{
+        text-decoration: none;
     }
 }

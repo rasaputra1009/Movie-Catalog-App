@@ -5,7 +5,7 @@
   align-items: center;
   flex-wrap: wrap;
   color: whitesmoke;
-  background-color: black;
+  background-color: #202020;
   outline: none;
   align-items: flex-start;
 }
@@ -18,7 +18,7 @@
   padding: 20px;
   font-size: 16px;
   width: 80vw;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .form label, .form button {
   margin-left: 20px;
@@ -27,7 +27,7 @@
 .form button {
   padding: 20px;
   background-color: greenyellow;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .formTitle {

@@ -1,10 +1,4 @@
 @import "./variables";
-@mixin header-item() {
-    padding: $padding;
-    font-size: $fontSmallSize;
-    border-radius: $borderRadius;
-}
-
 .header {
     @include flex(row, space-between);
     flex-wrap: wrap;
@@ -13,18 +7,25 @@
 }
 .header-left {
     font-weight: $fontWeight;
-    outline: none;
+    color: $textColor;
     font-size: $fontLargeSize;
 }
 .header-right
 {
-    @include flex(row,space-evenly);
-    outline: none;
-    input
-    {
-        @include header-item();
-        outline: $outline;
-        padding: $paddingInput;
+    @include flex(row,space-between);
+    input{
+        border-radius: $borderRadius;
+        padding: $padding;
+        outline:$outline;
     }
+    .header-right-add
+    {
+        margin: $margin;
+        font-size: $fontMediumSize;
+        color: $textEdit;
+    }
+}
+a,Link{
+    text-decoration: none;
 }
 
