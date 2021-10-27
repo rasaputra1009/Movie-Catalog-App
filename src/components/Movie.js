@@ -11,7 +11,7 @@ function Movie({ index, movie }) {
             <div className="movie-info">
                 <h1 className="title">{movie.title}</h1>
                 <Link to={{
-                    pathname:"/edit",
+                    pathname:`/edit/${movie.title}`,
                     state:{
                         name:movie.title
                     }

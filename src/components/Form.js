@@ -1,30 +1,42 @@
 import React from 'react'
 import axios from 'axios';
+import "../styles/Form.css";
 import { useSelector, useDispatch } from 'react-redux';
-import {updateCast, updateDescription, updateFavourite, updateImagePathUrl, updateTitle} from '../features/movies/movieInfo'
+import { updateCast, updateDescription, updateImagePathUrl, updateTitle } from '../features/movies/movieInfo'
+import { getMovies } from '../features/movies/movieSlice';
 
-function Form() {
+function Form({name}) {
     const dispatch = useDispatch();
-    let title=useSelector((state) => state.movieInfo.title);
-    let description=useSelector((state)=>state.movieInfo.description);
-    let imagepathurl=useSelector((state)=>state.movieInfo.imagepathurl);
-    let cast=useSelector((state)=>state.movieInfo.cast);
-    let favourite=useSelector((state)=>state.movieInfo.favourite)
+    let movies = useSelector(getMovies);
+    let all = useSelector(state => state.movieInfo);
+    let edit = false;
+    let movieEdit = {};
+    let title=name;
+    if (title) {
+        edit = true;
+        movieEdit = movies.filter((movie) => (movie.title === title));
+    }
     const formSubmit = (e) => {
         e.preventDefault();
-        const obj = {
-            title,imagepathurl,description,cast,favourite
+        if (!edit) {
+            axios.post('http://localhost/backend/add.php', all, { crossDomain: true })
+                .then(res => console.log(res.data));
         }
-        axios.post('http://localhost/backend/add.php', obj, { crossDomain: true })
-            .then(res => console.log(res.data));
+        else {
+            dispatch(updateTitle(title));
+            axios.post('http://localhost/backend/update.php', all, { crossDomain: true })
+                .then(res => console.log(res.data));
+        }
     }
     return (
         <div>
-            <form onSubmit={formSubmit}>
+            <form onSubmit={formSubmit} className="form">
+                <h1 className="formTitle">New Movie</h1>
+                <hr />
                 <label htmlFor="title">Name</label><br />
-                <input type="text" placeholder="Movie-Name" name="title" onChange={(e) => dispatch(updateTitle(e.target.value))} required />             <br />
+                {!edit ? (<input type="text" placeholder="Movie-Name" name="title" onChange={(e) => dispatch(updateTitle(e.target.value))} required />) : (<input type="text" value={title} readOnly />)}<br />
                 <label htmlFor="description">Description</label><br />
-                <textarea col="40" rows="5" type="text" name="description" placeholder="Tell us a bit about movie" onChange={(e) => dispatch(updateDescription(e.target.value))} required /><br />
+                <textarea col="70" rows="5" type="text" name="description" placeholder="Tell us a bit about movie" onChange={(e) => dispatch(updateDescription(e.target.value))} required /><br />
                 <label htmlFor="imageUrl">ImagePathUrl</label><br />
                 <input type="text" name="imageUrl" onChange={(e) => dispatch(updateImagePathUrl(e.target.value))} required /><br />
                 <label htmlFor="cast">cast</label><br />
@@ -34,5 +46,4 @@ function Form() {
         </div>
     )
 }
-
 export default Form

@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  color: whitesmoke;
+  background-color: black;
+  outline: none;
+  align-items: flex-start;
+}
+.form hr {
+  border: 1px solid whitesmoke;
+  width: 97vw;
+}
+.form input, .form textarea {
+  margin-left: 20px;
+  padding: 20px;
+  font-size: 16px;
+  width: 80vw;
+  border-radius: 5px;
+}
+.form label, .form button {
+  margin-left: 20px;
+  font-size: 35px;
+}
+.form button {
+  padding: 20px;
+  background-color: greenyellow;
+  border-radius: 5px;
+}
+
+.formTitle {
+  margin-left: 20px;
+  padding: 20px;
+  font-size: 16px;
+  padding: 0px;
+  font-size: 35px;
+}/*# sourceMappingURL=Form.css.map */

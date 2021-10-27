@@ -7,8 +7,7 @@ function Movies() {
     let movies = useSelector(getMovies);
     return (
         <div className="movies">
-            {(movies.map((movie, index) => <Movie index={index} movie={movie} />))};
-            {/* {console.log(movies)} */}
+            {(movies.map((movie, index) => <Movie key={index} movie={movie} />))};
         </div>
     )
 }

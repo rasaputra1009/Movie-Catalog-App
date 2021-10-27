@@ -13,11 +13,13 @@
 }
 .header-left {
     font-weight: $fontWeight;
+    outline: none;
     font-size: $fontLargeSize;
 }
 .header-right
 {
     @include flex(row,space-evenly);
+    outline: none;
     input
     {
         @include header-item();
@@ -25,3 +27,4 @@
         padding: $paddingInput;
     }
 }
+

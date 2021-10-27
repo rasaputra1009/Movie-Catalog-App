@@ -4,7 +4,7 @@ const initialState = {
     description: "",
     imagepathurl: "",
     cast: "",
-    favourite: 0
+    favourite: 0,
 };
 const movieInfo = createSlice({
     name: "moviesInfo",
@@ -29,10 +29,5 @@ const movieInfo = createSlice({
 })
 
 export const { updateCast, updateDescription, updateTitle, updateFavourite, updateImagePathUrl } = movieInfo.actions
-export const title = ((state) => state.movieInfo.title);
-export const description = ((state) => state.movieInfo.description);
-export const imagepathurl = ((state) => state.movieInfo.imagepathurl);
-export const cast = ((state) => state.movieInfo.cast);
-export const favourite = ((state) => state.movieInfo.favourite);
-
+export const obj=(state)=>state.movieInfo;
 export default movieInfo.reducer

@@ -1,0 +1,40 @@
+@import "./variables";
+@mixin formAlign() {
+    margin-left: $margin;
+    padding: $padding;
+    font-size: $fontSmallSize;
+}
+
+.form {
+    @include flex(column, center);
+    flex-wrap: wrap;
+    color:whitesmoke;
+    background-color:black;
+    outline: none;
+    align-items: flex-start;
+    hr
+    {
+        border: 1px solid whitesmoke;
+        width: $hrWidth;
+    }
+    input,textarea {
+        @include formAlign();
+        width:$width;
+        border-radius: $borderRadius;
+    }
+    label,button{
+        margin-left: $margin;
+        font-size: $fontLargeSize;
+    }
+    button{
+        padding:$padding;
+        background-color: greenyellow;
+        border-radius: $borderRadius;
+    }
+}
+.formTitle
+{
+    @include formAlign();
+    padding:0px;
+    font-size:$fontLargeSize;
+}
