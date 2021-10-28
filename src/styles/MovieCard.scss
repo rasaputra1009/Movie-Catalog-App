@@ -3,11 +3,19 @@
     @include flex(column, space-between);
     align-items: flex-start;
     padding: $padding;
+    position:$position;
     .poster {
-        width:$imgWidth;
-        height:$imgHeight;
-        border-radius:$borderRadius;
+        width: $imgWidth;
+        height: $imgHeight;
+        border-radius: $borderRadius;
         box-shadow: $boxShadow;
+    }
+    .favourite {
+        position: absolute;
+        left:$FavLeft;
+        top:$FavTop;
+        width:$FavWidth;
+        height:$FavHeight;
     }
 }
 .movie-info {
@@ -15,14 +23,15 @@
     align-items: flex-start;
     .title {
         font-size: $fontLargeSize;
-        color:$textColor;
+        color: $textColor;
     }
     .edit {
         font-size: $fontMediumSize;
-        color:$textEdit;
-        text-decoration:$outline;
+        color: $textEdit;
+        text-decoration: $outline;
     }
-    a,Link{
+    a,
+    Link {
         text-decoration: none;
     }
 }

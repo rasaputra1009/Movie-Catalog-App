@@ -18,14 +18,15 @@ function Edit() {
         });
       dispatch(addMovies(response.data));
     };
-    if (!movies.length) {
-      fetchMovies();
-    }
+     if (movies.length===0) {
+    fetchMovies();
+    } 
   });
   movieEdit = movies.filter((movie) => (movie.title === title));
+  if (!movies.length) { return null }
   return (
     <div>
-      {(movies.length > 0) ? (<Form name={movieEdit[0]} edit />) : ("null")}
+      <Form name={movieEdit[0]} edit />
     </div>
   )
 }

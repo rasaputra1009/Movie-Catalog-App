@@ -24,7 +24,7 @@ const movieInfo = createSlice({
             state.cast = payload
         },
         updateFavourite: (state, { payload }) => {
-            state.favourite = payload
+            state.favourite =1-payload;
         },
         updateSearch:(state,{payload})=>{
             state.search=payload

@@ -20,3 +20,6 @@ export const { addMovies,searchMovies } =movieSlice.actions
 export const getMovies=(state)=>state.movies.movies;
 export const searchRes=(state)=>state.movies.searchMovies;
 export default movieSlice.reducer
+
+
+// selector with reselect

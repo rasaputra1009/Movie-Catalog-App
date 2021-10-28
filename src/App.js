@@ -16,10 +16,10 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/Home" exact component={Home} />
-          <Route path="?search" component={Movies} />
+          <Route path="/Home" component={Home} />
           <Route path="/add" component={Add} />
           <Route path="/edit/:title" component={Edit} />
+          {/* <Route path="?search={searchtext}" component={Movies} /> */}
           <Route path="/movie-detail" component={MovieDetail} />
         </Switch>
       </Router>

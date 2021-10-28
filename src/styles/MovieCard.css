@@ -5,12 +5,20 @@
   align-items: center;
   align-items: flex-start;
   padding: 20px;
+  position: relative;
 }
 .movie-card .poster {
   width: 230px;
   height: 350px;
   border-radius: 8px;
   box-shadow: 1px -1px 9px 0px lightslategrey;
+}
+.movie-card .favourite {
+  position: absolute;
+  left: 195px;
+  top: 275px;
+  width: 80px;
+  height: 80px;
 }
 
 .movie-info {
@@ -29,6 +37,7 @@
   color: red;
   text-decoration: none;
 }
-.movie-info a, .movie-info Link {
+.movie-info a,
+.movie-info Link {
   text-decoration: none;
 }/*# sourceMappingURL=MovieCard.css.map */
