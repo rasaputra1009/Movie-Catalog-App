@@ -5,11 +5,11 @@ import axios from 'axios';
 import { addMovies } from '../features/movies/movieSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMovies } from '../features/movies/movieSlice';
+import { updateCast, updateDescription, updateImagePathUrl, updateTitle } from '../features/movies/movieInfo'
 function Edit() {
   let { title } = useParams();
   let movies = useSelector(getMovies);
   const dispatch = useDispatch();
-  let movieEdit = {};
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await axios.get('http://localhost/backend/getData.php')
@@ -22,11 +22,11 @@ function Edit() {
     fetchMovies();
     } 
   });
-  movieEdit = movies.filter((movie) => (movie.title === title));
+  const [movieEdit] = movies.filter((movie) => (movie.title === title));
   if (!movies.length) { return null }
   return (
     <div>
-      <Form name={movieEdit[0]} edit />
+      <Form name={movieEdit} edit />
     </div>
   )
 }

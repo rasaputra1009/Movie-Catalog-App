@@ -33,5 +33,4 @@ const movieInfo = createSlice({
 })
 
 export const { updateCast, updateDescription, updateTitle, updateFavourite, updateImagePathUrl ,updateSearch} = movieInfo.actions
-export const obj=(state)=>state.movieInfo;
 export default movieInfo.reducer

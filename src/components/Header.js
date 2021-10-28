@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import '../styles/Header.css';
 import { Link } from "react-router-dom";
@@ -17,16 +17,15 @@ function Header() {
                 });
             dispatch(searchMovies(response.data));
         };
-        if(search.length>0)
-        {   
-            setTimeout(()=>{
+        if (search.length > 0) {
+            setTimeout(() => {
                 fetchMovies();
-            },100);
-            let searchParams = new URLSearchParams(search);
+            }, 100);
+            let params = new URLSearchParams();
+            params.append('search',search);
         }
-        else{
+        else {
             dispatch(searchMovies([]));
-            let searchParams = new URLSearchParams("");
         }
     }, [search])
     return (
@@ -40,7 +39,7 @@ function Header() {
                     <h1 className="header-right-add">Add Now</h1>
                 </Link>
             </div>
-        </div>
+        </div >
     )
 }
 export default Header
