@@ -20,6 +20,10 @@
   width: 80px;
   height: 80px;
 }
+.movie-card .btn {
+  background-color: transparent;
+  border: none;
+}
 
 .movie-info {
   display: flex;

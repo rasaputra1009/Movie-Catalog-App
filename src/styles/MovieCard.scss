@@ -3,7 +3,7 @@
     @include flex(column, space-between);
     align-items: flex-start;
     padding: $padding;
-    position:$position;
+    position: $position;
     .poster {
         width: $imgWidth;
         height: $imgHeight;
@@ -12,11 +12,16 @@
     }
     .favourite {
         position: absolute;
-        left:$FavLeft;
-        top:$FavTop;
-        width:$FavWidth;
-        height:$FavHeight;
+        left: $FavLeft;
+        top: $FavTop;
+        width: $FavWidth;
+        height: $FavHeight;
     }
+    .btn {
+        background-color:transparent;
+        border:$outline;
+    }
+    
 }
 .movie-info {
     @include flex(column, flex-start);

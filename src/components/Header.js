@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
-import '../styles/Header.css';
 import { Link } from "react-router-dom";
 import { updateSearch } from '../features/stateInfo/movieInfo';
-import "../styles/Movies.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { searchMovies } from '../features/movies/movieSlice';
 import { fetchSearchMovies } from '../features/movies/moviesThunk';
+import "../styles/Movies.css";
+import '../styles/Header.css';
+
+
 function Header() {
     const dispatch = useDispatch();
     const search = useSelector((state) => state.movieInfo.search);

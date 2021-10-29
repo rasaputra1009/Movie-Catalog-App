@@ -8,33 +8,32 @@
 .form {
     @include flex(column, center);
     flex-wrap: wrap;
-    color:whitesmoke;
-    background-color:$bgColor;
+    color: whitesmoke;
+    background-color: $bgColor;
     outline: none;
     align-items: flex-start;
-    hr
-    {
+    hr {
         border: 1px solid whitesmoke;
         width: $hrWidth;
     }
-    input,textarea {
+    input,
+    textarea {
         @include formAlign();
-        width:$width;
+        width: $width;
         border-radius: $borderRadius;
     }
-    label,button{
+    label,
+    button {
         margin-left: $margin;
         font-size: $fontLargeSize;
     }
-    button{
-        padding:$padding;
+    button {
         background-color: greenyellow;
         border-radius: $borderRadius;
     }
 }
-.formTitle
-{
+.formTitle {
     @include formAlign();
-    padding:0px;
-    font-size:$fontLargeSize;
+    padding: 0px;
+    font-size: $fontLargeSize;
 }

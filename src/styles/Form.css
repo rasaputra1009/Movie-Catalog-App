@@ -13,19 +13,20 @@
   border: 1px solid whitesmoke;
   width: 97vw;
 }
-.form input, .form textarea {
+.form input,
+.form textarea {
   margin-left: 20px;
   padding: 20px;
   font-size: 16px;
   width: 80vw;
   border-radius: 8px;
 }
-.form label, .form button {
+.form label,
+.form button {
   margin-left: 20px;
   font-size: 35px;
 }
 .form button {
-  padding: 20px;
   background-color: greenyellow;
   border-radius: 8px;
 }

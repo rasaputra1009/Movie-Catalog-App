@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import "./stateUpdateThunk"
 const initialState = {
     title: "",
     description: "",
@@ -30,13 +29,18 @@ const movieInfo = createSlice({
         updateSearch: (state, { payload }) => {
             state.search = payload
         },
-        updateStateInfo: (state, { payload: { title, description, imagepathurl,cast } }) =>{
-                state.title=title;
-                state.description = description;
-                state.imagepathurl =imagepathurl;
-                state.cast =cast;
-        }
+        updateStateInfo: (state, { payload: { title, description, imageUrl,cast } }) => (
+                state.title=title,
+                state.description = description,
+                state.imagepathurl = imageUrl,
+                state.cast = cast
+        )
     }
 })
+
 export const { updateCast, updateDescription, updateTitle, updateFavourite, updateImagePathUrl, updateSearch,updateStateInfo } = movieInfo.actions
 export default movieInfo.reducer
+
+
+
+//

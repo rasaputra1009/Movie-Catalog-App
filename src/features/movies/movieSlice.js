@@ -19,8 +19,15 @@ const movieSlice = createSlice({
         }
     },
     extraReducers: {
+        [fetchMovies.pending]: () => {
+            console.log("Pending");
+        },
         [fetchMovies.fulfilled]: (state, { payload }) => {
+            console.log("Fulfilled");
             return { ...state, movies: payload }
+        },
+        [fetchMovies.rejected]: () => {
+            console.log("Rejected");
         },
         [fetchSearchMovies.fulfilled]: (state, { payload }) => {
             return { ...state, searchMovies: payload }
