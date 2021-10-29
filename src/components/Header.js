@@ -1,28 +1,19 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import '../styles/Header.css';
 import { Link } from "react-router-dom";
-import { updateSearch } from '../features/movies/movieInfo';
+import { updateSearch } from '../features/stateInfo/movieInfo';
 import "../styles/Movies.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { searchMovies } from '../features/movies/movieSlice';
+import { fetchSearchMovies } from '../features/movies/moviesThunk';
 function Header() {
     const dispatch = useDispatch();
     const search = useSelector((state) => state.movieInfo.search);
     useEffect(() => {
-        const fetchMovies = async () => {
-            const response = await axios.get(`http://localhost/backend/getSearchData.php?link=${search}`)
-                .catch((err) => {
-                    console.log("Error:", err);
-                });
-            dispatch(searchMovies(response.data));
-        };
         if (search.length > 0) {
             setTimeout(() => {
-                fetchMovies();
+                dispatch(fetchSearchMovies(search));
             }, 100);
-            let params = new URLSearchParams();
-            params.append('search',search);
         }
         else {
             dispatch(searchMovies([]));

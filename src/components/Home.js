@@ -1,20 +1,12 @@
 import React,{useEffect} from 'react'
 import Movies from './Movies'
 import { useDispatch} from 'react-redux'
-import { addMovies} from '../features/movies/movieSlice'
-import axios from 'axios'
+import { fetchMovies } from '../features/movies/moviesThunk'
 
 function Home() {
     const dispatch=useDispatch();
     useEffect(() => {
-        const fetchMovies = async () => {
-            const response = await axios.get('http://localhost/backend/getData.php')
-            .catch((err)=>{
-                console.log("Error:",err);
-            });
-            dispatch(addMovies(response.data));
-        };
-        fetchMovies();
+        dispatch(fetchMovies());
     })
     return (
         <div>
@@ -22,5 +14,4 @@ function Home() {
         </div>
     )
 }
-
 export default Home
