@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import "../styles/MovieCard.css"
 import star from "../Images/star.png"
 import starlight from "../Images/starlight.png"
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Home from './Home'
 import { updateFavourite } from '../features/stateInfo/movieInfo'
 import axios from 'axios'
@@ -11,9 +11,7 @@ import { fetchMovies } from '../features/movies/moviesThunk'
 
 function Movie({ index, movie }) {
     const dispatch = useDispatch();
-    let [click, setClick] = useState(0);
     const favClick = () => {
-        setClick(1);
         axios.post('http://localhost/backend/updateFav.php', movie, { crossDomain: true })
             .then(res => console.log(res.data));
         dispatch(fetchMovies());

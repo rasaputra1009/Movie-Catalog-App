@@ -11,7 +11,7 @@ function Edit() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (movies.length === 0) {
-      dispatch(fetchMovies)
+      dispatch(fetchMovies())
     }
   });
   const [movieEdit] = movies.filter((movie) => (movie.title === title));

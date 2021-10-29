@@ -6,7 +6,7 @@ import { updateCast, updateDescription, updateImagePathUrl, updateStateInfo, upd
 import { addMovieInfo, updateMovieInfo } from '../features/stateInfo/stateUpdateThunk';
 
 function Form({ name, edit }) {
-    console.log("hello world");
+    console.log(edit);
     const dispatch = useDispatch();
     const all = useSelector((state) => state.movieInfo);
     const title = useSelector(state => state.movieInfo.title);
@@ -15,18 +15,20 @@ function Form({ name, edit }) {
     const cast = useSelector(state => state.movieInfo.cast);
     useEffect(() => {
         if (edit) {
-            dispatch(updateTitle(name.title));
-            dispatch(updateDescription(name.description));
-            dispatch(updateImagePathUrl(name.imageUrl));
-            dispatch(updateCast(name.cast));
+            // dispatch(updateTitle(name.title));
+            // dispatch(updateDescription(name.description));
+            // dispatch(updateImagePathUrl(name.imageUrl));
+            // dispatch(updateCast(name.cast));
+            dispatch(updateStateInfo({title:name.title,description:name.description,imagepathurl:name.imageUrl,cast:name.cast}));
         }
         else {
-            dispatch(updateTitle(""));
-            dispatch(updateDescription(""));
-            dispatch(updateImagePathUrl(""));
-            dispatch(updateCast(""));
+            // dispatch(updateTitle(""));
+            // dispatch(updateDescription(""));
+            // dispatch(updateImagePathUrl(""));
+            // dispatch(updateCast(""));
+            dispatch(updateStateInfo({title:"",description:"",imagepathurl:"",cast:""}));
         }
-    });
+    },[]);
     const formSubmit = (e) => {
         e.preventDefault();
         if (!edit) {
@@ -37,10 +39,11 @@ function Form({ name, edit }) {
             axios.post('http://localhost/backend/update.php', all, { crossDomain: true })
                 .then(res => console.log(res.data));
         }
-        dispatch(updateTitle(""));
-        dispatch(updateDescription(""));
-        dispatch(updateImagePathUrl(""));
-        dispatch(updateCast(""));
+        // dispatch(updateTitle(""));
+        // dispatch(updateDescription(""));
+        // dispatch(updateImagePathUrl(""));
+        // dispatch(updateCast(""));
+        dispatch(updateStateInfo({title:"",description:"",imagepathurl:"",cast:""}));
     }
     return (
         <div>
