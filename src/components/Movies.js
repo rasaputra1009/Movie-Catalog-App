@@ -9,7 +9,8 @@ function Movies() {
     let search=useSelector((state)=>state.movieInfo.search);
     return (
         <div className="movies">
-           {(search.length===0 && searchResults.length===0)? (movies.map((movie, index) => <Movie key={index} movie={movie} />)):
+           {(search.length===0 && searchResults.length===0)? 
+           (movies.map((movie, index) => <Movie key={index} movie={movie} />)):
            ((search.length>0 && searchResults.length===0)?(<h1 className="not-found">No Movie Found</h1>):(searchResults.map((movie, index) => <Movie key={index} movie={movie} />)))};
 
         </div>

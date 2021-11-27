@@ -16,3 +16,5 @@ export const fetchSearchMovies = createAsyncThunk('movies/fetchSearchMovies', as
     return response.data;
 });
 
+
+
